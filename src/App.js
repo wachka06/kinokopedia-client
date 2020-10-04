@@ -12,7 +12,6 @@ class App extends Component {
     mushrooms: [],
     selectedMsh: {},
     showForm: false,
-    showEdit: false,
     form: {
       latin_name: "",
       common_name: "",
@@ -64,7 +63,7 @@ class App extends Component {
       img_url: img_url,
     };
 
-    if (!this.state.selectedMsh) {
+    if (!this.state.selectedMsh.id) {
       fetch(endPoint, {
         method: "POST",
         headers: {
@@ -77,7 +76,7 @@ class App extends Component {
         body: JSON.stringify(newMsh),
       })
         .then((res) => res.json())
-        .then((newData) => console.log(newData, "newDate"))
+        .then((newData) => this.setState({ mushroom: newData }))
         .catch((error) => console.error("Request failed", error));
       this.setState({ showForm: !this.state.showForm });
     } else {
@@ -101,16 +100,12 @@ class App extends Component {
           this.setState({ mushrooms: newMushrooms });
         })
         .catch((error) => console.error("Request failed", error));
-      this.setState({ showEdit: !this.state.showEdit });
+      this.setState({ showForm: !this.state.showForm });
     }
   };
 
   handleClick = (msh) => {
     this.setState({ selectedMsh: msh });
-  };
-
-  handleEdit = () => {
-    this.setState({ showEdit: !this.state.showEdit });
   };
 
   handleChange = (e) => {
@@ -122,27 +117,34 @@ class App extends Component {
     const url = `${endPoint}${selectedMsh.id}`;
     fetch(url, {
       method: "DELETE",
-      // headers: {
-      //   "Content-Type": "application/json",
-      //   Accept: "application/json",
-      //   "Access-Control-Allow-Origin": "*",
-      // },
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        "Access-Control-Allow-Origin": "*",
+      },
     })
-      .then((res) => res.json())
-      .then((newData) => console.log(newData, "new"))
+      .then((res) => res.text())
+      .then((newData) => console.log(newData))
       .catch((error) => console.error("Request failed", error));
   };
 
   render() {
     console.log(this.state.mushrooms, "MUSH");
+    console.log(this.state.selectedMsh, "selected");
+    console.log(this.state.form, "form");
     return (
       <div className="app">
         <Header handleForm={this.handleForm} />
         <main>
-          {this.state.showForm && <Form handleSubmit={this.handleSubmit} />}
-          {this.state.showEdit && (
+          {!this.state.selectedMsh.id && (
+            <button className="create-button" onClick={() => this.handleForm()}>
+              Create a new mushroom
+            </button>
+          )}
+          {this.state.showForm && (
             <Form
               handleSubmit={this.handleSubmit}
+              handleForm={this.handleForm}
               mushroom={this.state.selectedMsh}
               handleChange={this.handleChange}
             />
@@ -156,7 +158,7 @@ class App extends Component {
             this.state.selectedMsh.id && (
               <MushroomDetails
                 mushroom={this.state.selectedMsh}
-                handleEdit={this.handleEdit}
+                handleForm={this.handleForm}
                 handleDelete={this.handleDelete}
               />
             )

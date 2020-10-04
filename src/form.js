@@ -1,6 +1,6 @@
 import React from "react";
 
-const Form = ({ handleSubmit, mushroom, handleChange }) => {
+const Form = ({ handleSubmit, mushroom, handleChange, handleForm }) => {
   const {
     latin_name,
     common_name,
@@ -14,7 +14,7 @@ const Form = ({ handleSubmit, mushroom, handleChange }) => {
   return (
     <div className="form-wrap">
       <form onSubmit={handleSubmit}>
-        <button>&#10005;</button>
+        <button onClick={() => handleForm()}>&#10005;</button>
         <label>
           latin_name:
           <input

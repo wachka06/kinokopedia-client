@@ -1,10 +1,9 @@
 import React from "react";
 
-const Header = ({ handleForm }) => {
+const Header = () => {
   return (
     <header>
       <h3>Kinokopedia</h3>
-      <button onClick={() => handleForm()}>Create a new mushroom</button>
     </header>
   );
 };

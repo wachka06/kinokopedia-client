@@ -1,7 +1,6 @@
 import React from "react";
-import MushroomCard from "./MushroomCard";
 
-const MushroomDetails = ({ mushroom, handleEdit, handleDelete }) => {
+const MushroomDetails = ({ mushroom, handleForm, handleDelete }) => {
   const {
     latin_name,
     common_name,
@@ -12,13 +11,14 @@ const MushroomDetails = ({ mushroom, handleEdit, handleDelete }) => {
     characteristics,
     img_url,
   } = mushroom;
+  console.log(Array.isArray(confused_with), "TYPE");
   return (
     <div className="mushroom-details">
       <div className="img-wrap">
-        <img src={img_url} />
+        <img src={img_url} alt={latin_name} />
       </div>
       <div>
-        <button onClick={() => handleEdit()}>EDIT</button>
+        <button onClick={() => handleForm()}>EDIT</button>
         <button onClick={() => handleDelete(mushroom)}>DELETE</button>
         <p>latin_name: {latin_name}</p>
         <p>common_name: {common_name}</p>
