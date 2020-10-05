@@ -106,9 +106,6 @@ class App extends Component {
 
   handleChange = (e) => {
     const { name, value } = e.target;
-    // console.log("value", typeof value);
-    // console.log("name", name);
-    console.log(this.state);
     this.setState({ [name]: value });
   };
 
@@ -116,14 +113,14 @@ class App extends Component {
     const url = `${endPoint}${selectedMsh.id}`;
     fetch(url, {
       method: "DELETE",
-      // headers: {
-      //   "Content-Type": "application/json",
-      //   Accept: "application/json",
-      //   "Access-Control-Allow-Origin": "*",
-      // },
     })
       .then((res) => res.json())
-      .then((newData) => console.log(newData))
+      .then((newData) => {
+        const mushrooms = [...this.state.mushrooms].filter((msh) => {
+          return msh !== selectedMsh;
+        });
+        this.setState({ mushrooms });
+      })
       .catch((error) => console.error("Request failed", error));
   };
 

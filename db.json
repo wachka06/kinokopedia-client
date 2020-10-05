@@ -1,47 +1,6 @@
 {
   "mushrooms": [
     {
-      "id": 1,
-      "latin_name": "Amanita muscaria",
-      "common_name": [
-        "Fly agaric",
-        "Fly amanita"
-      ],
-      "confused_with": [
-        "Amanita caesarea"
-      ],
-      "habitat": "Native to conifer and deciduous woodlands throughout the temperate and boreal region of the Northern Hemisphere. It forms symbiotic relationships with many trees, including pine, spruce, fir, birch, and cedar.",
-      "region": [
-        "Worldwide"
-      ],
-      "poisonous": true,
-      "img_url": "https://live.staticflickr.com/65535/47663091811_f50f26590b_n.jpg",
-      "created_at": "2020-10-05T00:55:17.403Z",
-      "updated_at": "2020-10-05T00:55:17.403Z",
-      "url": "http://localhost:3000/mushrooms/1.json"
-    },
-    {
-      "id": 2,
-      "latin_name": "Agaricus arvensis",
-      "common_name": [
-        "Horse mushroom"
-      ],
-      "confused_with": [
-        "Amanita"
-      ],
-      "habitat": "Appearing during the months of July-November, it is frequently found near stables, as well as in meadows. It is often found growing with nettles, and sometimes associates with spruce trees.",
-      "region": [
-        "Britain",
-        "Iran",
-        "North America"
-      ],
-      "poisonous": false,
-      "img_url": "https://cdn.pixabay.com/photo/2016/03/13/16/13/horse-mushroom-1254040_960_720.jpg",
-      "created_at": "2020-10-05T00:55:17.412Z",
-      "updated_at": "2020-10-05T00:55:17.412Z",
-      "url": "http://localhost:3000/mushrooms/2.json"
-    },
-    {
       "id": 3,
       "latin_name": "Agaricus campestris",
       "common_name": [
