@@ -1,5 +1,15 @@
 import React from "react";
 
+export const text = {
+  latin_name: "Latin name:",
+  common_name: "Common name:",
+  confused_with: "Confused with:",
+  region: "Region:",
+  habitat: "Habitat:",
+  poisonous: "Poisonous:",
+  img_url: "Image URL:",
+};
+
 const Form = ({ handleSubmit, mushroom, handleChange, handleForm }) => {
   const {
     latin_name,
@@ -15,7 +25,7 @@ const Form = ({ handleSubmit, mushroom, handleChange, handleForm }) => {
       <form onSubmit={handleSubmit}>
         <button onClick={() => handleForm()}>&#10005;</button>
         <label>
-          latin_name:
+          {text.latin_name}
           <input
             type="text"
             name="latin_name"
@@ -24,7 +34,7 @@ const Form = ({ handleSubmit, mushroom, handleChange, handleForm }) => {
           />
         </label>
         <label>
-          common_name:
+          {text.common_name}
           <input
             type="text"
             name="common_name"
@@ -33,7 +43,7 @@ const Form = ({ handleSubmit, mushroom, handleChange, handleForm }) => {
           />
         </label>
         <label>
-          confused_with:
+          {text.confused_with}
           <input
             type="text"
             name="confused_with"
@@ -42,7 +52,7 @@ const Form = ({ handleSubmit, mushroom, handleChange, handleForm }) => {
           />
         </label>
         <label>
-          region:
+          {text.region}
           <input
             type="text"
             name="region"
@@ -51,7 +61,7 @@ const Form = ({ handleSubmit, mushroom, handleChange, handleForm }) => {
           />
         </label>
         <label>
-          habitat:
+          {text.habitat}
           <input
             type="text"
             name="habitat"
@@ -60,7 +70,7 @@ const Form = ({ handleSubmit, mushroom, handleChange, handleForm }) => {
           />
         </label>
         <label>
-          poisonous:
+          {text.poisonous}
           <input
             type="radio"
             name="poisonous"
@@ -77,7 +87,7 @@ const Form = ({ handleSubmit, mushroom, handleChange, handleForm }) => {
           No
         </label>
         <label>
-          img_url:
+          {text.img_url}
           <input
             type="text"
             name="img_url"

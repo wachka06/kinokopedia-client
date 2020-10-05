@@ -401,6 +401,92 @@
       "created_at": "2020-10-05T00:55:17.566Z",
       "updated_at": "2020-10-05T00:55:17.566Z",
       "url": "http://localhost:3000/mushrooms/20.json"
+    },
+    {
+      "common_name": [
+        null
+      ],
+      "confused_with": [
+        null
+      ],
+      "region": [
+        null
+      ],
+      "poisonous": false,
+      "img_url": "https://static01.nyt.com/images/2020/09/18/t-magazine/18tmag-mushrooms-slide-45EZ/18tmag-mushrooms-slide-45EZ-mobileMasterAt3x.jpg",
+      "id": 21
+    },
+    {
+      "common_name": [
+        null
+      ],
+      "confused_with": [
+        null
+      ],
+      "region": [
+        null
+      ],
+      "poisonous": false,
+      "img_url": "https://static01.nyt.com/images/2020/09/18/t-magazine/18tmag-mushrooms-slide-45EZ/18tmag-mushrooms-slide-45EZ-mobileMasterAt3x.jpg",
+      "id": 22
+    },
+    {
+      "common_name": [
+        null
+      ],
+      "confused_with": [
+        null
+      ],
+      "region": [
+        null
+      ],
+      "poisonous": false,
+      "img_url": "https://static01.nyt.com/images/2020/09/18/t-magazine/18tmag-mushrooms-slide-45EZ/18tmag-mushrooms-slide-45EZ-mobileMasterAt3x.jpg",
+      "id": 23
+    },
+    {
+      "common_name": [
+        null
+      ],
+      "confused_with": [
+        null
+      ],
+      "region": [
+        null
+      ],
+      "poisonous": false,
+      "img_url": "http:yahoo.co.jp",
+      "id": 24
+    },
+    {
+      "common_name": [
+        null
+      ],
+      "confused_with": [
+        null
+      ],
+      "region": [
+        null
+      ],
+      "poisonous": false,
+      "img_url": "https://static01.nyt.com/images/2020/09/18/t-magazine/18tmag-mushrooms-slide-45EZ/18tmag-mushrooms-slide-45EZ-mobileMasterAt3x.jpg",
+      "id": 25
+    },
+    {
+      "latin_name": "YEEEEEE",
+      "common_name": [
+        "Enoki"
+      ],
+      "confused_with": [
+        "ES"
+      ],
+      "region": [
+        "das"
+      ],
+      "habitat": "dasda",
+      "poisonous": true,
+      "img_url": "https://static01.nyt.com/images/2020/09/18/t-magazine/18tmag-mushrooms-slide-45EZ/18tmag-mushrooms-slide-45EZ-mobileMasterAt3x.jpg",
+      "id": 26
     }
   ]
 }
