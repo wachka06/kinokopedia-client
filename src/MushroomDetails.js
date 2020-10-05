@@ -7,11 +7,10 @@ const MushroomDetails = ({ mushroom, handleForm, handleDelete }) => {
     confused_with,
     region,
     habitat,
-    fairy_rings,
-    characteristics,
+    poisonous,
     img_url,
   } = mushroom;
-  console.log(Array.isArray(confused_with), "TYPE");
+
   return (
     <div className="mushroom-details">
       <div className="img-wrap">
@@ -25,8 +24,7 @@ const MushroomDetails = ({ mushroom, handleForm, handleDelete }) => {
         <p>confused_with: {confused_with}</p>
         <p>region: {region}</p>
         <p>habitat: {habitat}</p>
-        <p>fairy_rings: {fairy_rings}</p>
-        <p>characteristics: {characteristics}</p>
+        <p>poisonous: {poisonous ? "Yes" : "No"}</p>
       </div>
     </div>
   );

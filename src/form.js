@@ -7,8 +7,7 @@ const Form = ({ handleSubmit, mushroom, handleChange, handleForm }) => {
     confused_with,
     region,
     habitat,
-    fairy_rings,
-    characteristics,
+    poisonous,
     img_url,
   } = mushroom;
   return (
@@ -61,22 +60,21 @@ const Form = ({ handleSubmit, mushroom, handleChange, handleForm }) => {
           />
         </label>
         <label>
-          fairy_rings:
+          poisonous:
           <input
-            type="text"
-            name="fairy_rings"
-            placeholder={fairy_rings ? fairy_rings : ""}
+            type="radio"
+            name="poisonous"
+            value={true}
             onChange={handleChange}
           />
-        </label>
-        <label>
-          characteristics:
+          Yes
           <input
-            type="text"
-            name="characteristics"
-            placeholder={characteristics ? characteristics : ""}
+            type="radio"
+            name="poisonous"
+            value={false}
             onChange={handleChange}
           />
+          No
         </label>
         <label>
           img_url:
@@ -94,22 +92,3 @@ const Form = ({ handleSubmit, mushroom, handleChange, handleForm }) => {
 };
 
 export default Form;
-
-// {
-//     latin_name: "Agaricus campestris",
-//     common_name: ["Field mushroom", "Meadow mushroom"],
-//     confused_with: ["Amanita bisporigera"],
-//     region: ["Asia", "Europe", "Northern Africa", "Australia", "New Zealand", "North America"],
-//     habitat: "Common in fields and grassy areas after rain from late summer onwards worldwide. It is often found on lawns in suburban areas",
-//     fairy_rings: true,
-//     characteristics: {
-//         psychoactive: false,
-//         poisonous: false,
-//         deadly: false,
-//         cap: ["convex", "flat"],
-//         hymenium: ["free"],
-//       sporePrint: ["brown"],
-//       ecology: ["saprotrophic"],
-//     },
-//     img_url: "https://kingfishermushrooms.files.wordpress.com/2017/06/dsc_0303.jpg?w=676"
-// },

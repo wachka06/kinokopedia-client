@@ -12,16 +12,13 @@ class App extends Component {
     mushrooms: [],
     selectedMsh: {},
     showForm: false,
-    form: {
-      latin_name: "",
-      common_name: "",
-      confused_with: "",
-      region: "",
-      habitat: "",
-      fairy_rings: "",
-      characteristics: "",
-      img_url: "",
-    },
+    latin_name: "",
+    common_name: "",
+    confused_with: "",
+    region: "",
+    habitat: "",
+    poisonous: false,
+    img_url: "",
   };
 
   componentDidMount = () => {
@@ -47,10 +44,9 @@ class App extends Component {
       confused_with,
       region,
       habitat,
-      fairy_rings,
-      characteristics,
+      poisonous,
       img_url,
-    } = this.state.form;
+    } = this.state;
 
     const newMsh = {
       latin_name: latin_name,
@@ -58,12 +54,12 @@ class App extends Component {
       confused_with: [confused_with],
       region: [region],
       habitat: habitat,
-      fairy_rings: fairy_rings,
-      characteristics: characteristics,
+      poisonous: poisonous === "true" ? true : false,
       img_url: img_url,
     };
-
+    console.log(newMsh, "newMsh");
     if (!this.state.selectedMsh.id) {
+      console.log(this.state, "form");
       fetch(endPoint, {
         method: "POST",
         headers: {
@@ -110,28 +106,28 @@ class App extends Component {
 
   handleChange = (e) => {
     const { name, value } = e.target;
-    this.setState({ form: { [name]: value } });
+    // console.log("value", typeof value);
+    // console.log("name", name);
+    console.log(this.state);
+    this.setState({ [name]: value });
   };
 
   handleDelete = (selectedMsh) => {
     const url = `${endPoint}${selectedMsh.id}`;
     fetch(url, {
       method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-        "Access-Control-Allow-Origin": "*",
-      },
+      // headers: {
+      //   "Content-Type": "application/json",
+      //   Accept: "application/json",
+      //   "Access-Control-Allow-Origin": "*",
+      // },
     })
-      .then((res) => res.text())
+      .then((res) => res.json())
       .then((newData) => console.log(newData))
       .catch((error) => console.error("Request failed", error));
   };
 
   render() {
-    console.log(this.state.mushrooms, "MUSH");
-    console.log(this.state.selectedMsh, "selected");
-    console.log(this.state.form, "form");
     return (
       <div className="app">
         <Header handleForm={this.handleForm} />

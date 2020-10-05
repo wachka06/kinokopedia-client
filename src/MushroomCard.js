@@ -9,7 +9,7 @@ const MushroomCard = ({ mushroom, handleClick }) => {
       </div>
       <div className="text-wrap">
         <p>{latin_name}</p>
-        <p>{`aka ${common_name.join(", ")}`}</p>
+        <p>{common_name && `${`aka ${common_name.join(", ")}`}`}</p>
         <button onClick={() => handleClick(mushroom)}>more</button>
       </div>
     </div>
