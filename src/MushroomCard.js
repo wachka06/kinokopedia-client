@@ -8,7 +8,7 @@ const MushroomCard = ({ mushroom, handleClick }) => {
         <img src={img_url} alt={latin_name} />
       </div>
       <div className="text-wrap">
-        <p>{latin_name}</p>
+        <h5>{latin_name}</h5>
         <p>{common_name && `${`aka ${common_name.join(", ")}`}`}</p>
         <button onClick={() => handleClick(mushroom)}>more</button>
       </div>

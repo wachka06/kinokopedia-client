@@ -17,7 +17,6 @@ const Form = ({ handleSubmit, mushroom, handleChange, handleForm }) => {
     confused_with,
     region,
     habitat,
-    poisonous,
     img_url,
   } = mushroom;
   return (
